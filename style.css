@@ -263,11 +263,11 @@ body {
     var(--background-primary-two)
   );
   color: #000;
+}
 
 .footer-box {
   padding: 20px;
 }
-
 
 .footer-box .form-control {
   box-shadow: none !important;
