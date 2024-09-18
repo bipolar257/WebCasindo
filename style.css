@@ -1,0 +1,372 @@
+* {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+:root {
+  --background-primary-one: rgb(216, 237, 199);
+  --background-primary-two: rgb(239, 247, 237);
+  --accent-color-one: rgb(22, 66, 60);
+  --accent-color-two: #6a9c89;
+}
+body {
+  font-family: "Times New Roman", Times, serif !important;
+  overflow-x: hidden;
+}
+/* Navbar */
+.custom-navbar {
+  background-image: linear-gradient(
+    to left,
+    rgba(216, 237, 199, 0.4),
+    rgb(239, 247, 237, 0.4)
+  ) !important;
+  backdrop-filter: blur(10px);
+}
+#nav-bar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  height: 100px;
+}
+/* Change the color of the navbar brand */
+.custom-navbar .navbar-brand {
+  color: var(--accent-color-one); /* White text for the brand */
+  font-weight: 700;
+  font-size: 30px;
+}
+
+/* Change the color of the navigation links */
+.custom-navbar .nav-link {
+  color: var(--accent-color-one); /* White text for the links */
+}
+
+/* Change the color of the active link */
+.custom-navbar .nav-link.active {
+  color: #ffcc00; /* Yellow for the active link */
+}
+
+/* Banner */
+#banner {
+  display: flex;
+  justify-content: space-between; /* Space between text and image */
+  align-items: center; /* Vertically align text and image */
+  height: 100vh; /* Make the section full height */
+  padding: 20px;
+  margin-top: -100px;
+  background-image: linear-gradient(
+    to left,
+    var(--background-primary-one),
+    var(--background-primary-two)
+  );
+}
+
+.text-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; /* Center the text horizontally */
+}
+
+.text-content h1 {
+  font-size: 9rem;
+  font-weight: bold;
+  margin: 0;
+  color: var(--accent-color-one);
+  text-align: center; /* Ensure the title is centered */
+  max-width: 100%;
+}
+
+.text-content p {
+  font-size: 3rem;
+  color: var(--accent-color-two);
+  margin-top: 10px;
+  text-align: center;
+}
+#scrollButton {
+  box-shadow: none;
+  padding: 8px 25px;
+  border: 1px solid var(--accent-color-two);
+  border-radius: 10px;
+  background-color: var(--background-primary-one);
+  color: var(--accent-color-one);
+}
+
+.img-home img {
+  max-width: 100%; /* Ensure the image doesn't overflow */
+  height: auto;
+  object-fit: cover;
+}
+
+.container-banner {
+  display: flex;
+  justify-content: space-between; /* Keep text on left, image on right */
+  align-items: center;
+  width: 100%;
+}
+
+#services {
+  padding: 80px 0;
+}
+
+.service-img {
+  width: 250px; /* Unified the size across images */
+  height: auto; /* Keep the aspect ratio */
+  margin: 20px auto; /* Center the images and add some margin */
+}
+
+.service-item {
+  padding: 20px;
+}
+
+.service-item h4 {
+  padding: 5px;
+  margin-top: 25px;
+  text-transform: uppercase;
+  font-size: 40px;
+}
+
+.service-item p {
+  font-size: 20px;
+}
+
+.title::after {
+  content: "";
+  background: var(--background-primary-one);
+  height: 5px;
+  width: 300px;
+  margin-bottom: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  transform: translateY(8px);
+}
+
+#services .btn-primary {
+  box-shadow: none;
+  padding: 8px 25px;
+  border: none;
+  border-radius: 20px;
+  background-image: linear-gradient(
+    to left,
+    var(--background-primary-one),
+    var(--background-primary-two)
+  ) !important;
+  color: var(--accent-color-one);
+}
+
+
+.logo-partnership {
+  width: 100%; /* Full width of the container */
+  background-color: #ffffff; /* Optional: background for the logo section */
+  padding-bottom: 50px;
+  padding-top: 20px;
+  align-items: center; /* Center logos vertically */
+  display: flex; /* Arrange logos in a row */
+  align-items: top; /* Center the logos vertically within the container */
+}
+
+.logo-partnership img {
+  width: 250px; /* Set the width to 300px */
+  height: auto; /* Keep the aspect ratio */
+  margin: 20px auto; /* Center the images and add some margin */
+}
+
+/* Container Styling */
+#pricing-list {
+  padding: 50px 0;
+}
+
+.title {
+  margin-bottom: 40px;
+  font-size: 36px;
+  text-transform: uppercase;
+}
+
+/* Company Titles */
+.company-title {
+  font-size: 28px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Product Card Styling */
+.product-card {
+  background-color: var(--background-primary-two);
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin: 20px 0;
+  padding: 15px;
+  text-align: center;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.product-card:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Image Styling */
+.product-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+/* Product Info */
+.product-card h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 10px;
+}
+
+.product-description {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.product-price {
+  font-size: 18px;
+  font-weight: 700;
+  color: #333;
+}
+
+/* Layout Control */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.col-md-4 {
+  max-width: 30%;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  .col-md-4 {
+    max-width: 100%;
+  }
+}
+
+.custom-image {
+  max-width: 100%;
+  height: auto;
+  margin-top: 30px;
+}
+
+
+#footer {
+  background-image: linear-gradient(
+    to left,
+    var(--background-primary-one),
+    var(--background-primary-two)
+  );
+  color: #000;
+}
+.footer-img {
+  width: 100%;
+}
+
+.footer-box {
+  padding: 20px;
+}
+
+.footer-box img {
+  width: 120px;
+  margin-bottom: 20px;
+}
+
+.footer-box .form-control {
+  box-shadow: none !important;
+  border: none;
+  border-radius: 0;
+  margin-top: 25px;
+  margin-bottom: 0px;
+}
+
+.footer-box .btn-primary {
+  box-shadow: none !important;
+  border: none;
+  border-radius: 0px;
+  margin-top: 10px;
+  margin-bottom: 0px;
+  background-color: var(--accent-color-one);
+}
+
+.modal {
+  display: none;
+  position: absolute;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.6);
+  align-items: center;
+  justify-content: center;
+}
+.modal-container {
+  position: relative;
+  background-color: #ffffff;
+  height: max-content;
+  padding: 0 0 20px 0;
+  text-align: center;
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+  border-radius: 10px;
+  animation: slidemodal 0.5s;
+  /* justify-content: center; */
+  /* padding: 1.2rem; */
+
+  .modal-top {
+    display: flex;
+    background-color: var(--background-primary-one);
+    justify-content: space-between;
+    padding: 10px;
+    color: var(--accent-color-one);
+
+    .modal-close {
+      color: #ffffff;
+      font-size: 15px;
+    }
+  }
+
+  .modal-fill {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+
+    h2 {
+      color: var(--accent-color-one);
+    }
+  }
+  .button-close {
+    /* position: absolute; */
+    border-radius: 50px;
+    width: 10rem;
+    padding: 5px;
+    border: 2px solid var(--background-primary-one);
+  }
+  .button-close:hover {
+    background-color: var(--background-primary-one);
+    color: var(--accent-color-one);
+  }
+}
+/* modal animmation */
+@keyframes slidemodal {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
