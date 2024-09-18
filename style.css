@@ -154,7 +154,6 @@ body {
   color: var(--accent-color-one);
 }
 
-
 .logo-partnership {
   width: 100%; /* Full width of the container */
   background-color: #ffffff; /* Optional: background for the logo section */
@@ -196,7 +195,7 @@ body {
   border: 1px solid #ddd;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  margin: 20px 0;
+  margin: 20px 5px;
   padding: 15px;
   text-align: center;
   transition: box-shadow 0.3s ease-in-out;
@@ -257,7 +256,6 @@ body {
   margin-top: 30px;
 }
 
-
 #footer {
   background-image: linear-gradient(
     to left,
@@ -265,19 +263,11 @@ body {
     var(--background-primary-two)
   );
   color: #000;
-}
-.footer-img {
-  width: 100%;
-}
 
 .footer-box {
   padding: 20px;
 }
 
-.footer-box img {
-  width: 120px;
-  margin-bottom: 20px;
-}
 
 .footer-box .form-control {
   box-shadow: none !important;
