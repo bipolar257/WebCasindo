@@ -116,6 +116,7 @@ body {
   background-color: var(--accent-color);
   color: white;
   transition: 0.5s ease;
+  padding: 12px 90px;
 }
 
 #scrollButton:hover {
@@ -268,13 +269,6 @@ body {
   margin: 10px 0;
 }
 
-.product-price {
-  font-size: 18px;
-  font-weight: 700;
-  color: #333;
-  margin-bottom: 10px;
-}
-
 /* Optional: If you have a description and want it at the top */
 .product-description {
   font-size: 16px;
@@ -282,6 +276,14 @@ body {
   margin-bottom: 10px;
 }
 
+.checkout{
+  color: var(--highlight-color);
+  text-decoration: none;
+}
+
+.checkout:hover {
+  color: #c70039; /* Change this to your desired hover color */
+}
 /* Layout Control */
 .row {
   display: flex;
