@@ -4,10 +4,11 @@
   overflow: hidden;
 }
 :root {
-  --primary-color: rgb(1,124,142);
-  --secondary-color: rgb(255, 255, 255);
-  --accent-color: rgb(22, 66, 60);
-  --font-color: #ffffff;
+  --primary-color: rgb(199, 237, 238);
+  --secondary-color: rgb(245, 228, 195);
+  --accent-color: rgb(1,124,142);
+  --font-color: #000000;
+  --font-color-negative: #ffffff;
 }
 body {
   font-family: "Roboto", sans-serif !important;
@@ -15,11 +16,7 @@ body {
 }
 /* Navbar */
 .custom-navbar {
-  background-image: linear-gradient(
-    to left,
-    rgba(1,124,142, 0.4),
-    rgb(255, 255, 255, 0.4)
-  ) !important;
+  background-color: rgba(0, 0, 0, 0);
   backdrop-filter: blur(10px);
 }
 #nav-bar {
@@ -64,6 +61,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center; /* Center the text horizontally */
+  overflow: visible;
 }
 
 .text-content h1 {
@@ -86,20 +84,21 @@ body {
   padding: 8px 25px;
   border: 1px solid var(--accent-color);
   border-radius: 10px;
-  background-color: var(--secondary-color);
-  color: var(--accent-color);
+  background-color: var(--accent-color);
+  color: var(--font-color-negative);
   transition: 0.5s ease;
 }
 
 #scrollButton:hover {
   transform: translateY(-3px);
-  background-color: var(--primary-color);
   box-shadow:2px 5px 10px gray;
-  color: #fff;
+  background-color: rgba(0, 0, 0, 0);
+  color: var(--font-color);
+  
 }
 
 .img-home img {
-  max-width: 100%; /* Ensure the image doesn't overflow */
+  max-width: 50%; /* Ensure the image doesn't overflow */
   padding-top: 15px;
   height: auto;
   object-fit: cover;
@@ -152,14 +151,17 @@ body {
 #services .btn-primary {
   box-shadow: none;
   padding: 8px 25px;
-  border: none;
-  border-radius: 20px;
-  background-image: linear-gradient(
-    to left,
-    var(--primary-color),
-    var(--secondary-color)
-  ) !important;
-  color: var(--accent-color);
+  border: 1px solid var(--accent-color);
+  border-radius: 10px;
+  background-color: var(--accent-color);
+  color: var(--font-color-negative);
+  transition: 0.5s ease;
+}
+#services .btn-primary:hover{
+  transform: translateY(-3px);
+  box-shadow:2px 5px 10px gray;
+  background-color: rgba(0, 0, 0, 0);
+  color: var(--font-color);
 }
 
 .logo-partnership {
