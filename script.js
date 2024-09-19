@@ -1,31 +1,24 @@
-const button = document.getElementById("scrollButton");
-
-button.addEventListener("click", () => {
-  // Enable scrolling
+function enableScrollingAndScrollTo(elementId) {
   document.documentElement.style.overflow = "auto";
   document.body.style.overflow = "auto";
 
-  // Scroll to section 2
-  document.getElementById("services").scrollIntoView({
-    behavior: "smooth",
-  });
+  const targetElement = document.getElementById(elementId);
+  if (targetElement) {
+    targetElement.scrollIntoView({ behavior: "smooth" });
+  }
+}
+
+// Scroll button click
+document.getElementById("scrollButton").addEventListener("click", () => {
+  enableScrollingAndScrollTo("services");
 });
 
+// Navbar links click
 document.querySelectorAll(".navbar-nav .nav-link").forEach((link) => {
   link.addEventListener("click", (event) => {
     event.preventDefault(); // Prevent default anchor behavior
-
-    const targetId = link.getAttribute("href").substring(1); // Extract the target ID from href
-    const targetElement = document.getElementById(targetId);
-
-    if (targetElement) {
-      // Enable scrolling
-      document.documentElement.style.overflow = "auto";
-      document.body.style.overflow = "auto";
-
-      // Scroll to the target section
-      targetElement.scrollIntoView({ behavior: "smooth" });
-    }
+    const targetId = link.getAttribute("href").substring(1); // Extract target section id
+    enableScrollingAndScrollTo(targetId);
   });
 });
 

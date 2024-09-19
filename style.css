@@ -32,10 +32,10 @@ body {
   height: auto;
   padding-left: 10px;
 }
-.navbar-nav{
+.navbar-nav {
   margin-right: 20px;
 }
-.navbar-toggler{
+.navbar-toggler {
   margin-right: 20px;
   width: 50px;
   height: auto;
@@ -52,11 +52,15 @@ body {
   color: var(--secondary-color); /* Yellow for the active link */
 }
 
-#image-hovering-overlay{
+#image-hovering-overlay {
   height: 100vh;
-  width: 100vh;
+  width: 100vw;
+  max-width: 100%; /* Prevent overflow */
+  max-height: 100%; /* Prevent overflow */
   position: absolute;
   z-index: 1;
+  object-fit: cover; /* Adjust based on your needs */
+  box-sizing: border-box;
 }
 /* Banner */
 #banner {
@@ -79,16 +83,6 @@ body {
   z-index: 2;
 }
 
-.text-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center; /* Center the text horizontally */
-  overflow: visible;
-  text-align: center; /* Ensure the text is centered within its container */
-  flex: 1; /* Allow the text content to take equal space */
-}
-
 .text-content h1,
 .text-content p {
   max-width: 100%; /* Ensure text does not exceed the width */
@@ -98,15 +92,12 @@ body {
   font-weight: bold;
   margin: 0;
   color: var(--primary-color);
-  text-align: center; /* Ensure the title is centered */
-  max-width: 100%;
 }
 
 .text-content p {
   font-size: 2rem;
   color: var(--secondary-color);
   margin-top: 10px;
-  text-align: center;
 }
 #scrollButton {
   box-shadow: none;
@@ -131,11 +122,11 @@ body {
   display: flex;
   justify-content: center; /* Center the image horizontally */
   flex: 1; /* Allow the image to take equal space */
+  z-index: 2;
 }
 
 .img-home img {
   max-width: 100%; /* Ensure the image doesn't overflow */
-  padding-top: 15px;
   height: auto;
   object-fit: cover;
 }
@@ -238,8 +229,8 @@ body {
 /* Product Card Styling */
 .product-card {
   display: flex;
-  flex-direction: column;  /* Stack content vertically */
-  justify-content: space-between;  /* Push title and price to the bottom */
+  flex-direction: column; /* Stack content vertically */
+  justify-content: space-between; /* Push title and price to the bottom */
   background-color: var(--background-color);
   border: 1px solid #ddd;
   border-radius: 8px;
@@ -248,7 +239,7 @@ body {
   padding: 15px;
   text-align: center;
   transition: box-shadow 0.3s ease-in-out;
-  height: 100%;  /* Ensure the card takes full height */
+  height: 100%; /* Ensure the card takes full height */
 }
 
 .product-image {
@@ -260,7 +251,7 @@ body {
 
 /* Anchor product-info at the bottom */
 .product-info {
-  margin-top: auto;  /* Push the title and price down */
+  margin-top: auto; /* Push the title and price down */
 }
 
 .product-card h3 {
@@ -276,7 +267,7 @@ body {
   margin-bottom: 10px;
 }
 
-.checkout{
+.checkout {
   color: var(--highlight-color);
   text-decoration: none;
 }
@@ -423,8 +414,47 @@ body {
   html {
     font-size: 50%;
   }
+  #banner {
+    display: flex;
+    flex-direction: column; /* Stack text and image vertically */
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Let content determine the height */
+  }
+
+  .container-banner {
+    display: flex;
+    flex-direction: column; /* Stack text and image vertically */
+    justify-content: center; /* Center elements */
+    align-items: center;
+    height: 100%;
+  }
+
+  .text-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center text vertically */
+    align-items: center; /* Center text horizontally */
+    text-align: center;
+  }
+
+  .text-content h1 {
+    font-size: 6rem; /* Reduce the font size for smaller screens */
+  }
+
+  .text-content p {
+    font-size: 2.5rem; /* Adjust the paragraph font size */
+  }
+
+  #scrollButton {
+    padding: 12px 50px; /* Adjust the padding for a smaller button */
+  }
+
   .img-home {
-    max-width: 50%;
+    display: none; /* Hide the entire image container */
+  }
+  .img-home img {
+    display: none;
   }
   .col-md-4 {
     max-width: 100%;
