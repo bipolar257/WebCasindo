@@ -140,7 +140,7 @@ window.onload = function() {
       // Loop through each product of the company and generate the product cards
       company.products.forEach(product => {
           const productCard = document.createElement('div');
-          productCard.classList.add('col-md-4', 'product-card');
+          productCard.classList.add('col-md-3', 'product-card');
 
           const productImage = document.createElement('img');
           productImage.src = product.imagesrc;
