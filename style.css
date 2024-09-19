@@ -18,7 +18,7 @@ body {
 /* Navbar */
 .custom-navbar {
   background-color: rgba(0, 0, 0, 0);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(20px);
 }
 #nav-bar {
   position: fixed;
@@ -28,14 +28,23 @@ body {
 }
 /* Change the color of the navbar brand */
 .custom-navbar .navbar-brand img {
-  width: 100px;
+  width: 150px;
   height: auto;
   padding-left: 10px;
 }
-
+.navbar-nav{
+  margin-right: 20px;
+}
+.navbar-toggler{
+  margin-right: 20px;
+  width: 50px;
+  height: auto;
+}
 /* Change the color of the navigation links */
 .custom-navbar .nav-link {
   color: var(--primary-color); /* White text for the links */
+  font-size: 20px;
+  margin-right: 15px;
 }
 
 /* Change the color of the active link */
@@ -43,6 +52,12 @@ body {
   color: var(--secondary-color); /* Yellow for the active link */
 }
 
+#image-hovering-overlay{
+  height: 100vh;
+  width: 100vh;
+  position: absolute;
+  z-index: 1;
+}
 /* Banner */
 #banner {
   display: flex;
@@ -61,6 +76,7 @@ body {
   overflow: visible;
   text-align: center;
   flex: 1;
+  z-index: 2;
 }
 
 .text-content {
