@@ -5,11 +5,11 @@
 }
 :root {
   --primary-color: #025464;
-  --secondary-color: #017c8e;;
+  --secondary-color: #017c8e;
   --accent-color: #043e4e;
   --highlight-color: #48a6ad;
   --background-color: #e0f7fa;
-  --gradient-bg: linear-gradient(to left, #7ec4c9, #e0f7fa)
+  --gradient-bg: linear-gradient(to left, #7ec4c9, #e0f7fa);
 }
 body {
   font-family: "Roboto", sans-serif !important;
@@ -73,7 +73,8 @@ body {
   flex: 1; /* Allow the text content to take equal space */
 }
 
-.text-content h1, .text-content p {
+.text-content h1,
+.text-content p {
   max-width: 100%; /* Ensure text does not exceed the width */
 }
 .text-content h1 {
@@ -103,7 +104,7 @@ body {
 
 #scrollButton:hover {
   transform: translateY(-3px);
-  box-shadow:2px 5px 10px gray;
+  box-shadow: 2px 5px 10px gray;
   border: 1px solid var(--primary-color);
   background-color: var(--highlight-color);
   color: #ffffff;
@@ -116,7 +117,7 @@ body {
 }
 
 .img-home img {
-  max-width: 50%; /* Ensure the image doesn't overflow */
+  max-width: 100%; /* Ensure the image doesn't overflow */
   padding-top: 15px;
   height: auto;
   object-fit: cover;
@@ -175,9 +176,9 @@ body {
   color: white;
   transition: 0.5s ease;
 }
-#services .btn-primary:hover{
+#services .btn-primary:hover {
   transform: translateY(-3px);
-  box-shadow:2px 5px 10px gray;
+  box-shadow: 2px 5px 10px gray;
   border: 1px solid var(--primary-color);
   background-color: var(--highlight-color);
   color: #ffffff;
@@ -189,14 +190,14 @@ body {
 }
 
 /* Company Titles */
-.company{
+.company {
   padding: 50px;
   max-width: 100%;
 }
 
 .company-title {
   font-size: 28px;
-  margin-top: 40px;
+  margin-top: 0px;
   margin-bottom: 20px;
   text-align: center;
 }
@@ -217,7 +218,22 @@ body {
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
 }
 
-/* Image Styling */
+/* Product Card Styling */
+.product-card {
+  display: flex;
+  flex-direction: column;  /* Stack content vertically */
+  justify-content: space-between;  /* Push title and price to the bottom */
+  background-color: var(--background-color);
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin: 20px 5px;
+  padding: 15px;
+  text-align: center;
+  transition: box-shadow 0.3s ease-in-out;
+  height: 100%;  /* Ensure the card takes full height */
+}
+
 .product-image {
   width: 100%;
   height: auto;
@@ -225,23 +241,29 @@ body {
   margin-bottom: 15px;
 }
 
-/* Product Info */
+/* Anchor product-info at the bottom */
+.product-info {
+  margin-top: auto;  /* Push the title and price down */
+}
+
 .product-card h3 {
   font-size: 20px;
   font-weight: 600;
-  margin: 10px;
-}
-
-.product-description {
-  font-size: 16px;
-  color: #666;
-  margin-bottom: 10px;
+  margin: 10px 0;
 }
 
 .product-price {
   font-size: 18px;
   font-weight: 700;
   color: #333;
+  margin-bottom: 10px;
+}
+
+/* Optional: If you have a description and want it at the top */
+.product-description {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 10px;
 }
 
 /* Layout Control */
@@ -333,10 +355,10 @@ body {
 
   .modal-top {
     display: flex;
-    background-color: var(--primary-color);
+    background-color: var(--background-color);
     justify-content: space-between;
     padding: 10px;
-    color: var(--accent-color);
+    color: var(--primary-color);
 
     .modal-close {
       color: #ffffff;
@@ -379,15 +401,14 @@ body {
   }
 }
 
-@media (max-width:900px){
-  html{
+@media (max-width: 900px) {
+  html {
     font-size: 50%;
   }
-  .img-home{
+  .img-home {
     max-width: 50%;
   }
   .col-md-4 {
     max-width: 100%;
   }
-  
 }

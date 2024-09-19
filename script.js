@@ -50,134 +50,133 @@ window.addEventListener("load", function () {
   window.scrollTo(0, 0); // Move the scroll position to the top of the page
 });
 
-window.onload = function() {
+window.onload = function () {
   // Data structure that organizes products by company
   const data = [
-      {
-          companyName: "Pandopo Catering",
-          products: [
-              {
-                  title: "Healty Lunch",
-                  imagesrc: "images/Healty-luch.png",
-                  description: "Delicious healthy lunch options.",
-                  link: "#"
-              },
-              {
-                  title: "Choco Brownies",
-                  imagesrc: "images/Choco-Brownies.png",
-                  description: "Rich and fudgy chocolate brownies.",
-                  link: "#"
-              },
-              {
-                title: "Biji Ketapang",
-                imagesrc: "images/biji-ketapang.png",
-                description: "Rich and fudgy chocolate brownies.",
-                link: "#"
-            },
-            {
-              title: "Putri Ayu",
-              imagesrc: "images/putri-ayu.png",
-              description: "Rich and fudgy chocolate brownies.",
-              link: "#"
-          },
-              {
-                  title: "Pastel",
-                  imagesrc: "images/Pastel.jpg",
-                  description: "Crispy and savory pastel pastries.",
-                  link: "#"
-              }
-          ]
-      },
-      {
-          companyName: "Salted Milea",
-          products: [
-              {
-                  title: "Kerupuk",
-                  imagesrc: "images/Kerupuk-salted-milea.png",
-                  description: "Crispy salted crackers.",
-                  link: "#"
-              },
-              {
-                  title: "Telur Asin",
-                  imagesrc: "images/Telur-asin.png",
-                  description: "Savory salted eggs.",
-                  link: "#"
-              }
-          ]
-      },
-      {
-          companyName: "Coffee Alphabet",
-          products: [
-              {
-                  title: "Kopi Cai",
-                  imagesrc: "images/kopi-cai.png",
-                  description: "Smooth and rich coffee blend.",
-                  link: "#"
-              }
-          ]
-      }
+    {
+      companyName: "Pandopo Catering",
+      products: [
+        {
+          title: "Healty Lunch",
+          imagesrc: "images/Healty-luch.png",
+          description: "Delicious healthy lunch options.",
+          link: "#",
+        },
+        {
+          title: "Choco Brownies",
+          imagesrc: "images/Choco-Brownies.png",
+          description: "Rich and fudgy chocolate brownies.",
+          link: "#",
+        },
+        {
+          title: "Biji Ketapang",
+          imagesrc: "images/biji-ketapang.png",
+          description: "Rich and fudgy chocolate brownies.",
+          link: "#",
+        },
+        {
+          title: "Putri Ayu",
+          imagesrc: "images/putri-ayu.png",
+          description: "Rich and fudgy chocolate brownies.",
+          link: "#",
+        },
+        {
+          title: "Pastel",
+          imagesrc: "images/Pastel.jpg",
+          description: "Crispy and savory pastel pastries.",
+          link: "#",
+        },
+      ],
+    },
+    {
+      companyName: "Salted Milea",
+      products: [
+        {
+          title: "Kerupuk",
+          imagesrc: "images/Kerupuk-salted-milea.png",
+          description: "Crispy salted crackers.",
+          link: "#",
+        },
+        {
+          title: "Telur Asin",
+          imagesrc: "images/Telur-asin.png",
+          description: "Savory salted eggs.",
+          link: "#",
+        },
+      ],
+    },
+    {
+      companyName: "Coffee Alphabet",
+      products: [
+        {
+          title: "Kopi Cai",
+          imagesrc: "images/kopi-cai.png",
+          description: "Smooth and rich coffee blend.",
+          link: "#",
+        },
+      ],
+    },
   ];
 
-  const mainContainer = document.querySelector('.main-container');
+  const mainContainer = document.querySelector(".main-container");
 
-  data.forEach(company => {
-      // Create a section for each company
-      const companySection = document.createElement('div');
-      companySection.classList.add('company');
+  data.forEach((company) => {
+    // Create a section for each company
+    const companySection = document.createElement("div");
+    companySection.classList.add("company");
 
-      // Add company title
-      const companyTitle = document.createElement('h2');
-      companyTitle.classList.add('company-title');
-      companyTitle.innerHTML = company.companyName;
+    // Add company title
+    const companyTitle = document.createElement("h2");
+    companyTitle.classList.add("company-title");
+    companyTitle.innerHTML = company.companyName;
 
-      // Append the company title to the section
-      companySection.appendChild(companyTitle);
+    // Append the company title to the section
+    companySection.appendChild(companyTitle);
 
-      // Create a row to hold the product cards
-      const productRow = document.createElement('div');
-      productRow.classList.add('row');
+    // Create a row to hold the product cards
+    const productRow = document.createElement("div");
+    productRow.classList.add("row");
 
-      // Loop through each product of the company and generate the product cards
-      company.products.forEach(product => {
-          const productCard = document.createElement('div');
-          productCard.classList.add('col-md-3', 'product-card');
+    // Loop through each product of the company and generate the product cards
+    company.products.forEach((product) => {
+      const productCard = document.createElement("div");
+      productCard.classList.add("col-md-3", "product-card");
 
-          const productImage = document.createElement('img');
-          productImage.src = product.imagesrc;
-          productImage.alt = product.title;
-          productImage.classList.add('product-image');
+      const productImage = document.createElement("img");
+      productImage.src = product.imagesrc;
+      productImage.alt = product.title;
+      productImage.classList.add("product-image");
 
-          const productTitle = document.createElement('h3');
-          productTitle.innerHTML = product.title;
+      const productTitle = document.createElement("h3");
+      productTitle.innerHTML = product.title;
 
-          const productDescription = document.createElement('p');
-          productDescription.classList.add('product-description');
-          productDescription.innerHTML = product.description;
+      const productDescription = document.createElement("p");
+      productDescription.classList.add("product-description");
+      productDescription.innerHTML = product.description;
 
-          const checkoutLink = document.createElement('a');
-          checkoutLink.href = product.link;
-          checkoutLink.innerHTML = 'Buy Now';
-          checkoutLink.classList.add('checkout');
-          checkoutLink.target = '_blank';
+      const checkoutLink = document.createElement("a");
+      checkoutLink.href = product.link;
+      checkoutLink.innerHTML = "Buy Now";
+      checkoutLink.classList.add("checkout");
+      checkoutLink.target = "_blank";
 
-          // Append product information to the card
-          productCard.appendChild(productImage);
-          productCard.appendChild(productTitle);
-          productCard.appendChild(productDescription);
-          productCard.appendChild(checkoutLink);
+      // Append product information to the card
+      productCard.appendChild(productImage);
+      productCard.appendChild(productTitle);
+      productCard.appendChild(productDescription);
+      productCard.appendChild(checkoutLink);
 
-          // Append the product card to the row
-          productRow.appendChild(productCard);
-      });
+      // Append the product card to the row
+      productRow.appendChild(productCard);
+    });
 
-      // Append the product row to the company section
-      companySection.appendChild(productRow);
+    // Append the product row to the company section
+    companySection.appendChild(productRow);
 
-      // Append the company section to the main container
-      mainContainer.appendChild(companySection);
+    // Append the company section to the main container
+    mainContainer.appendChild(companySection);
   });
 };
-
 
 ScrollReveal({
   reset: false,
