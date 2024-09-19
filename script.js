@@ -167,7 +167,7 @@ window.onload = function() {
 
           const productDescription = document.createElement('p');
           productDescription.classList.add('product-description');
-          productDescription.innerHTML = product.descript ion;
+          productDescription.innerHTML = product.description;
 
           const productPrice = document.createElement('p');
           productPrice.classList.add('product-price');
