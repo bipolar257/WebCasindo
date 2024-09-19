@@ -60,42 +60,30 @@ window.onload = function() {
                   title: "Healty Lunch",
                   imagesrc: "images/Healty-luch.png",
                   description: "Delicious healthy lunch options.",
-                  price: 50000,
                   link: "#"
               },
               {
                   title: "Choco Brownies",
                   imagesrc: "images/Choco-Brownies.png",
                   description: "Rich and fudgy chocolate brownies.",
-                  price: 30000,
                   link: "#"
               },
               {
-                title: "Choco Brownies",
-                imagesrc: "images/Choco-Brownies.png",
+                title: "Biji Ketapang",
+                imagesrc: "images/biji-ketapang.png",
                 description: "Rich and fudgy chocolate brownies.",
-                price: 30000,
                 link: "#"
             },
             {
-              title: "Choco Brownies",
-              imagesrc: "images/Choco-Brownies.png",
+              title: "Putri Ayu",
+              imagesrc: "images/putri-ayu.png",
               description: "Rich and fudgy chocolate brownies.",
-              price: 30000,
               link: "#"
           },
-          {
-            title: "Choco Brownies",
-            imagesrc: "images/Choco-Brownies.png",
-            description: "Rich and fudgy chocolate brownies.",
-            price: 30000,
-            link: "#"
-        },
               {
                   title: "Pastel",
                   imagesrc: "images/Pastel.jpg",
                   description: "Crispy and savory pastel pastries.",
-                  price: 20000,
                   link: "#"
               }
           ]
@@ -107,14 +95,12 @@ window.onload = function() {
                   title: "Kerupuk",
                   imagesrc: "images/Kerupuk-salted-milea.png",
                   description: "Crispy salted crackers.",
-                  price: 15000,
                   link: "#"
               },
               {
                   title: "Telur Asin",
                   imagesrc: "images/Telur-asin.png",
                   description: "Savory salted eggs.",
-                  price: 25000,
                   link: "#"
               }
           ]
@@ -126,7 +112,6 @@ window.onload = function() {
                   title: "Kopi Cai",
                   imagesrc: "images/kopi-cai.png",
                   description: "Smooth and rich coffee blend.",
-                  price: 45000,
                   link: "#"
               }
           ]
@@ -155,7 +140,7 @@ window.onload = function() {
       // Loop through each product of the company and generate the product cards
       company.products.forEach(product => {
           const productCard = document.createElement('div');
-          productCard.classList.add('col-md-2', 'product-card');
+          productCard.classList.add('col-md-4', 'product-card');
 
           const productImage = document.createElement('img');
           productImage.src = product.imagesrc;
@@ -169,10 +154,6 @@ window.onload = function() {
           productDescription.classList.add('product-description');
           productDescription.innerHTML = product.description;
 
-          const productPrice = document.createElement('p');
-          productPrice.classList.add('product-price');
-          productPrice.innerHTML = 'Rp ' + product.price.toLocaleString();
-
           const checkoutLink = document.createElement('a');
           checkoutLink.href = product.link;
           checkoutLink.innerHTML = 'Buy Now';
@@ -183,7 +164,6 @@ window.onload = function() {
           productCard.appendChild(productImage);
           productCard.appendChild(productTitle);
           productCard.appendChild(productDescription);
-          productCard.appendChild(productPrice);
           productCard.appendChild(checkoutLink);
 
           // Append the product card to the row
@@ -197,6 +177,7 @@ window.onload = function() {
       mainContainer.appendChild(companySection);
   });
 };
+
 
 ScrollReveal({
   reset: false,
