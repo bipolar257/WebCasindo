@@ -4,11 +4,12 @@
   overflow: hidden;
 }
 :root {
-  --primary-color: rgb(199, 237, 238);
-  --secondary-color: rgb(245, 228, 195);
-  --accent-color: rgb(1,124,142);
-  --font-color: #000000;
-  --font-color-negative: #ffffff;
+  --primary-color: #025464;
+  --secondary-color: #017c8e;;
+  --accent-color: #043e4e;
+  --highlight-color: #48a6ad;
+  --background-color: #e0f7fa;
+  --gradient-bg: linear-gradient(to left, #7ec4c9, #e0f7fa)
 }
 body {
   font-family: "Roboto", sans-serif !important;
@@ -34,12 +35,12 @@ body {
 
 /* Change the color of the navigation links */
 .custom-navbar .nav-link {
-  color: var(--font-color); /* White text for the links */
+  color: var(--primary-color); /* White text for the links */
 }
 
 /* Change the color of the active link */
 .custom-navbar .nav-link.active {
-  color: #ffcc00; /* Yellow for the active link */
+  color: var(--secondary-color); /* Yellow for the active link */
 }
 
 /* Banner */
@@ -48,12 +49,8 @@ body {
   justify-content: space-between; /* Space between text and image */
   align-items: center; /* Vertically align text and image */
   height: 100vh; /* Make the section full height */
-  padding: 20px;
-  background-image: linear-gradient(
-    to left,
-    var(--primary-color),
-    var(--secondary-color)
-  );
+  padding: 20px 50px;
+  background: var(--gradient-bg);
 }
 
 .text-content {
@@ -62,39 +59,60 @@ body {
   justify-content: center;
   align-items: center; /* Center the text horizontally */
   overflow: visible;
+  text-align: center;
+  flex: 1;
 }
 
+.text-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; /* Center the text horizontally */
+  overflow: visible;
+  text-align: center; /* Ensure the text is centered within its container */
+  flex: 1; /* Allow the text content to take equal space */
+}
+
+.text-content h1, .text-content p {
+  max-width: 100%; /* Ensure text does not exceed the width */
+}
 .text-content h1 {
   font-size: 5rem;
   font-weight: bold;
   margin: 0;
-  color: var(--accent-color);
+  color: var(--primary-color);
   text-align: center; /* Ensure the title is centered */
   max-width: 100%;
 }
 
 .text-content p {
   font-size: 2rem;
-  color: var(--accent-color);
+  color: var(--secondary-color);
   margin-top: 10px;
   text-align: center;
 }
 #scrollButton {
   box-shadow: none;
   padding: 8px 25px;
-  border: 1px solid var(--accent-color);
+  border: 1px solid var(--secondary-color);
   border-radius: 10px;
   background-color: var(--accent-color);
-  color: var(--font-color-negative);
+  color: white;
   transition: 0.5s ease;
 }
 
 #scrollButton:hover {
   transform: translateY(-3px);
   box-shadow:2px 5px 10px gray;
-  background-color: rgba(0, 0, 0, 0);
-  color: var(--font-color);
-  
+  border: 1px solid var(--primary-color);
+  background-color: var(--highlight-color);
+  color: #ffffff;
+}
+
+.img-home {
+  display: flex;
+  justify-content: center; /* Center the image horizontally */
+  flex: 1; /* Allow the image to take equal space */
 }
 
 .img-home img {
@@ -138,7 +156,7 @@ body {
 
 .title::after {
   content: "";
-  background: var(--primary-color);
+  background: var(--accent-color);
   height: 5px;
   width: 300px;
   margin-bottom: 40px;
@@ -151,33 +169,18 @@ body {
 #services .btn-primary {
   box-shadow: none;
   padding: 8px 25px;
-  border: 1px solid var(--accent-color);
+  border: 1px solid var(--secondary-color);
   border-radius: 10px;
   background-color: var(--accent-color);
-  color: var(--font-color-negative);
+  color: white;
   transition: 0.5s ease;
 }
 #services .btn-primary:hover{
   transform: translateY(-3px);
   box-shadow:2px 5px 10px gray;
-  background-color: rgba(0, 0, 0, 0);
-  color: var(--font-color);
-}
-
-.logo-partnership {
-  width: 100%; /* Full width of the container */
-  background-color: #ffffff; /* Optional: background for the logo section */
-  padding-bottom: 50px;
-  padding-top: 20px;
-  align-items: center; /* Center logos vertically */
-  display: flex; /* Arrange logos in a row */
-  align-items: top; /* Center the logos vertically within the container */
-}
-
-.logo-partnership img {
-  width: 250px; /* Set the width to 300px */
-  height: auto; /* Keep the aspect ratio */
-  margin: 20px auto; /* Center the images and add some margin */
+  border: 1px solid var(--primary-color);
+  background-color: var(--highlight-color);
+  color: #ffffff;
 }
 
 /* Container Styling */
@@ -200,7 +203,7 @@ body {
 
 /* Product Card Styling */
 .product-card {
-  background-color: var(--secondary-color);
+  background-color: var(--background-color);
   border: 1px solid #ddd;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -216,7 +219,7 @@ body {
 
 /* Image Styling */
 .product-image {
-  max-width: 100%;
+  width: 100%;
   height: auto;
   border-radius: 8px;
   margin-bottom: 15px;
@@ -245,18 +248,28 @@ body {
 .row {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: center;
 }
 
-.col-md-4 {
+.col-md-3 {
   max-width: 30%;
   margin-bottom: 20px;
 }
 
-@media (max-width: 768px) {
-  .col-md-4 {
-    max-width: 100%;
-  }
+.logo-partnership {
+  width: 100%; /* Full width of the container */
+  background-color: #ffffff; /* Optional: background for the logo section */
+  padding-bottom: 50px;
+  padding-top: 20px;
+  align-items: center; /* Center logos vertically */
+  display: flex; /* Arrange logos in a row */
+  align-items: top; /* Center the logos vertically within the container */
+}
+
+.logo-partnership img {
+  width: 250px; /* Set the width to 300px */
+  height: auto; /* Keep the aspect ratio */
+  margin: 20px auto; /* Center the images and add some margin */
 }
 
 .custom-image {
@@ -266,12 +279,8 @@ body {
 }
 
 #footer {
-  background-image: linear-gradient(
-    to left,
-    var(--primary-color),
-    var(--secondary-color)
-  );
-  color: #000;
+  background-image: var(--gradient-bg);
+  color: var(--primary-color);
 }
 
 .footer-box {
@@ -376,6 +385,9 @@ body {
   }
   .img-home{
     max-width: 50%;
+  }
+  .col-md-4 {
+    max-width: 100%;
   }
   
 }
