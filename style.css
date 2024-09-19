@@ -4,21 +4,21 @@
   overflow: hidden;
 }
 :root {
-  --background-primary-one: rgb(216, 237, 199);
-  --background-primary-two: rgb(239, 247, 237);
-  --accent-color-one: rgb(22, 66, 60);
-  --accent-color-two: #6a9c89;
+  --primary-color: rgb(1,124,142);
+  --secondary-color: rgb(255, 255, 255);
+  --accent-color: rgb(22, 66, 60);
+  --font-color: #ffffff;
 }
 body {
-  font-family: "Times New Roman", Times, serif !important;
+  font-family: "Roboto", sans-serif !important;
   overflow-x: hidden;
 }
 /* Navbar */
 .custom-navbar {
   background-image: linear-gradient(
     to left,
-    rgba(216, 237, 199, 0.4),
-    rgb(239, 247, 237, 0.4)
+    rgba(1,124,142, 0.4),
+    rgb(255, 255, 255, 0.4)
   ) !important;
   backdrop-filter: blur(10px);
 }
@@ -29,15 +29,15 @@ body {
   width: 100vw;
 }
 /* Change the color of the navbar brand */
-.custom-navbar .navbar-brand {
-  color: var(--accent-color-one); /* White text for the brand */
-  font-weight: 700;
-  font-size: 30px;
+.custom-navbar .navbar-brand img {
+  width: 100px;
+  height: auto;
+  padding-left: 10px;
 }
 
 /* Change the color of the navigation links */
 .custom-navbar .nav-link {
-  color: var(--accent-color-one); /* White text for the links */
+  color: var(--font-color); /* White text for the links */
 }
 
 /* Change the color of the active link */
@@ -54,8 +54,8 @@ body {
   padding: 20px;
   background-image: linear-gradient(
     to left,
-    var(--background-primary-one),
-    var(--background-primary-two)
+    var(--primary-color),
+    var(--secondary-color)
   );
 }
 
@@ -70,24 +70,32 @@ body {
   font-size: 5rem;
   font-weight: bold;
   margin: 0;
-  color: var(--accent-color-one);
+  color: var(--accent-color);
   text-align: center; /* Ensure the title is centered */
   max-width: 100%;
 }
 
 .text-content p {
   font-size: 2rem;
-  color: var(--accent-color-two);
+  color: var(--accent-color);
   margin-top: 10px;
   text-align: center;
 }
 #scrollButton {
   box-shadow: none;
   padding: 8px 25px;
-  border: 1px solid var(--accent-color-two);
+  border: 1px solid var(--accent-color);
   border-radius: 10px;
-  background-color: var(--background-primary-one);
-  color: var(--accent-color-one);
+  background-color: var(--secondary-color);
+  color: var(--accent-color);
+  transition: 0.5s ease;
+}
+
+#scrollButton:hover {
+  transform: translateY(-3px);
+  background-color: var(--primary-color);
+  box-shadow:2px 5px 10px gray;
+  color: #fff;
 }
 
 .img-home img {
@@ -122,16 +130,16 @@ body {
   padding: 5px;
   margin-top: 25px;
   text-transform: uppercase;
-  font-size: 40px;
+  font-size: 30px;
 }
 
 .service-item p {
-  font-size: 20px;
+  font-size: 15px;
 }
 
 .title::after {
   content: "";
-  background: var(--background-primary-one);
+  background: var(--primary-color);
   height: 5px;
   width: 300px;
   margin-bottom: 40px;
@@ -148,10 +156,10 @@ body {
   border-radius: 20px;
   background-image: linear-gradient(
     to left,
-    var(--background-primary-one),
-    var(--background-primary-two)
+    var(--primary-color),
+    var(--secondary-color)
   ) !important;
-  color: var(--accent-color-one);
+  color: var(--accent-color);
 }
 
 .logo-partnership {
@@ -190,7 +198,7 @@ body {
 
 /* Product Card Styling */
 .product-card {
-  background-color: var(--background-primary-two);
+  background-color: var(--secondary-color);
   border: 1px solid #ddd;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -258,8 +266,8 @@ body {
 #footer {
   background-image: linear-gradient(
     to left,
-    var(--background-primary-one),
-    var(--background-primary-two)
+    var(--primary-color),
+    var(--secondary-color)
   );
   color: #000;
 }
@@ -282,7 +290,7 @@ body {
   border-radius: 0px;
   margin-top: 10px;
   margin-bottom: 0px;
-  background-color: var(--accent-color-one);
+  background-color: var(--accent-color);
 }
 
 .modal {
@@ -314,10 +322,10 @@ body {
 
   .modal-top {
     display: flex;
-    background-color: var(--background-primary-one);
+    background-color: var(--primary-color);
     justify-content: space-between;
     padding: 10px;
-    color: var(--accent-color-one);
+    color: var(--accent-color);
 
     .modal-close {
       color: #ffffff;
@@ -333,7 +341,7 @@ body {
     align-items: center;
 
     h2 {
-      color: var(--accent-color-one);
+      color: var(--accent-color);
     }
   }
   .button-close {
@@ -341,11 +349,11 @@ body {
     border-radius: 50px;
     width: 10rem;
     padding: 5px;
-    border: 2px solid var(--background-primary-one);
+    border: 2px solid var(--primary-color);
   }
   .button-close:hover {
-    background-color: var(--background-primary-one);
-    color: var(--accent-color-one);
+    background-color: var(--primary-color);
+    color: var(--accent-color);
   }
 }
 /* modal animmation */
@@ -362,7 +370,7 @@ body {
 
 @media (max-width:900px){
   html{
-    font-size: 60%;
+    font-size: 50%;
   }
   .img-home{
     max-width: 50%;
